@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ipl</title>
 </head>
 <body>
+{% if all_teams %}
+<h1>2018 All IPL Teams </h1>
+<ul>
+    {% for team in all_teams %}
+    <li><a href="/cricket/{{ team.id }}/">{{ team.Team_name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3>You dont have any team.........</h3>
 
+{% endif %}
 </body>
 </html>
